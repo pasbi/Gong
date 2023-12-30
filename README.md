@@ -33,7 +33,8 @@ A device which is
 - [**ESP32 NodeMCU**: Microcontroller, power supply and WIFI interface (I'm sure any WIFI-capable Arduino-like board will do)](https://www.az-delivery.de/products/esp32-developmentboard)
 - [**Speaker**](https://www.az-delivery.de/en/products/2-stuck-dfplayer-mini-3-watt-8-ohm-mini-lautsprecher-mit-jst-ph2-0-mm-pin-schnittstelle-fur-arduino-raspberry-pi-und-elektronische-diy-projekte-inklusive-e-book)
 
-TODO: images
 
-
-
+![soldered board from top](images/photo_2023-12-30_22-11-24.jpg)
+![soldered board from bottom](images/photo_2023-12-30_22-11-25.jpg)
+![bread board test total](images/photo_2023-12-30_22-11-28.jpg)
+![bread board test detail](images/photo_2023-12-30_22-11-29.jpg)
