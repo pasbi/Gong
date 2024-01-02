@@ -38,3 +38,5 @@ A device which is
 ![soldered board from bottom](images/photo_2023-12-30_22-11-25.jpg)
 ![bread board test total](images/photo_2023-12-30_22-11-28.jpg)
 ![bread board test detail](images/photo_2023-12-30_22-11-29.jpg)
+![Rendering of the Case](images/case.jpg)
+![Image of the device in real](images/photo_2024-01-02_12-44-37.jpg)
