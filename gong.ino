@@ -149,7 +149,7 @@ void setup()
 
   setup_wifi();
   setup_player();
-  gong({.loudness=10, .index=1});
+  gong({.loudness=10, .index=2});
 }
 
 void loop(){
