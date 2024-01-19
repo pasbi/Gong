@@ -8,7 +8,7 @@
 WiFiServer server(80);
 DFRobotDFPlayerMini player;
 
-void printDetail(uint8_t type, int value){
+void printDetail(const uint8_t type, const int value){
   switch (type) {
     case TimeOut:
       Serial.println(F("Time Out!"));
