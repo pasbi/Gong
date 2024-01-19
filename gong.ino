@@ -118,8 +118,9 @@ void print_website(WiFiClient& client)
   client.println();
 
   // the content of the HTTP response follows the header:
-  client.print("Click <a href=\"/H\">here</a> to turn the LED on pin 5 on.<br>");
-  client.print("Click <a href=\"/L\">here</a> to turn the LED on pin 5 off.<br>");
+  client.println("<p>This is the WiFi Gong.<p>");
+  client.println("<p>Click <a href=\"/gong&loudness=10&index=1\">here</a> to play a faint gong ...</p>");
+  client.println("<p>... or <a href=\"/gong&loudness=30&index=1\">here</a> to play with maximum loudness.</p>");
 
   // The HTTP response ends with another blank line:
   client.println();
