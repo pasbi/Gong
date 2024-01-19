@@ -4,9 +4,15 @@
 #include "DFRobotDFPlayerMini.h"
 #include "Arduino.h"
 #include <WiFi.h>
+#include "esp_system.h"
+#include "rom/ets_sys.h"
 
 WiFiServer server(80);
 DFRobotDFPlayerMini player;
+
+static constexpr auto ms_per_hour = UINT64_C(3600) * UINT64_C(1000) * UINT64_C(1000);
+const auto wdt_timeout_us = UINT64_C(24) * ms_per_hour;  // trigger after a day
+hw_timer_t* timer = nullptr;
 
 void printDetail(const uint8_t type, const int value){
   switch (type) {
@@ -143,11 +149,18 @@ void handle_line(const String& line)
   }
 }
 
+void ARDUINO_ISR_ATTR reboot()
+{
+  esp_restart();
+}
+
 void setup()
 {
   Serial.begin(115200);
-  delay(10);
-
+  timer = timerBegin(0, 80, true);
+  timerAttachInterrupt(timer, &reboot, true);
+  timerAlarmWrite(timer, wdt_timeout_us, false);
+  timerAlarmEnable(timer);
   setup_wifi();
   setup_player();
   gong({.loudness=10, .index=2});
