@@ -2,11 +2,10 @@
 
 ## Idea
 
-A device which is
+A device to play a pre-defined notification sound via local web request. Requirements:
 - low-cost
 - low-energy
 - easy to use (no encryption, no cloud, no internet)
-- play pre-defined sounds via web-request
 
 
 ## How to use
@@ -33,10 +32,10 @@ A device which is
 - [**ESP32 NodeMCU**: Microcontroller, power supply and WIFI interface (I'm sure any WIFI-capable Arduino-like board will do)](https://www.az-delivery.de/products/esp32-developmentboard)
 - [**Speaker**](https://www.az-delivery.de/en/products/2-stuck-dfplayer-mini-3-watt-8-ohm-mini-lautsprecher-mit-jst-ph2-0-mm-pin-schnittstelle-fur-arduino-raspberry-pi-und-elektronische-diy-projekte-inklusive-e-book)
 
+![bread board test total](images/photo_2023-12-30_22-11-28.jpg)
+![bread board test detail](images/photo_2023-12-30_22-11-29.jpg)
+![Rendering of the Case](images/case.png)
 
 ![soldered board from top](images/photo_2023-12-30_22-11-24.jpg)
 ![soldered board from bottom](images/photo_2023-12-30_22-11-25.jpg)
-![bread board test total](images/photo_2023-12-30_22-11-28.jpg)
-![bread board test detail](images/photo_2023-12-30_22-11-29.jpg)
-![Rendering of the Case](images/case.jpg)
 ![Image of the device in real](images/photo_2024-01-02_12-44-37.jpg)
