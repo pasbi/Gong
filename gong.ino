@@ -75,24 +75,30 @@ void printDetail(const uint8_t type, const int value){
   }
 }
 
-void setup_wifi()
+bool setup_wifi()
 {
   Serial.print("Connecting to ");
   Serial.println(ssid);
 
   WiFi.begin(ssid, password);
 
+  int count = 0;
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
+    count += 1;
+    if (count > 15) {
+      return false;
+    }
   }
 
   Serial.println("");
   Serial.println("WiFi connected.");
-  Serial.println("IP address: ");
+  Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
   server.begin();
+  return true;
 }
 
 void setup_player()
@@ -157,11 +163,12 @@ void ARDUINO_ISR_ATTR reboot()
 void setup()
 {
   Serial.begin(115200);
-  timer = timerBegin(0, 80, true);
-  timerAttachInterrupt(timer, &reboot, true);
-  timerAlarmWrite(timer, wdt_timeout_us, false);
-  timerAlarmEnable(timer);
-  setup_wifi();
+  timer = timerBegin(1);
+  timerAttachInterrupt(timer, &reboot);
+  timerAlarm(timer, 10, false, 0);
+  while (!setup_wifi()) {
+    Serial.println("Failed to connect to WiFi. Trying again ...");
+  }
   setup_player();
   gong({.loudness=10, .index=2});
 }
